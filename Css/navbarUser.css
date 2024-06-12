@@ -1,0 +1,81 @@
+body,
+.navbar,
+.nav-link {
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    padding-top: 0px;
+    /* Adjust to match the height of your navbar */
+}
+
+.navbar {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.8) !important;
+    /* Semi-transparent background */
+    backdrop-filter: blur(10px);
+    /* Blur effect */
+    /* Safari support */
+}
+
+.nav-link {
+    position: relative;
+    color: rgba(0, 0, 0, 0.7) !important;
+    /* Normal state color */
+    transition: color 0.2s ease-in-out;
+    /* Smooth transition */
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+    /* Adjust the value to position the line */
+    width: 100%;
+    height: 3px;
+    /* Adjust the height of the line */
+    background-color: green;
+    /* Line color */
+    transform: scaleX(0);
+    transition: transform 0.2s ease-in-out;
+    transform-origin: bottom right;
+}
+
+.nav-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.nav-link:hover {
+    color: rgba(0, 0, 0, 0.7) !important;
+    /* Keep the same color on hover */
+    background-color: transparent !important;
+    /* Remove background hover effect */
+}
+
+.navbar-brand:hover {
+    background-color: transparent !important;
+    /* Remove background hover effect for the logo */
+}
+
+.navbar-toggler {
+    border: none;
+    /* Remove border for the navbar toggler */
+}
+
+.navbar-toggler:hover {
+    background-color: transparent !important;
+    /* Remove background hover effect for the navbar toggler */
+}
+
+.nav-item {
+    margin-right: 10px;
+    /* Adjust the value to add spacing between list items */
+}
+
+.navbar-brand img {
+    max-width: 125px;
+    height: auto;
+}

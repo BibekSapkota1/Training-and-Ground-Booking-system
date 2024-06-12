@@ -1,0 +1,235 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* This css is for user Admin page */
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.container-slide {
+    overflow-y: auto;
+}
+
+/* table {
+    width: 100%;
+    border-collapse: collapse;
+    white-space: nowrap;
+
+} */
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    white-space: nowrap;
+}
+
+/* form {
+    white-space: none;
+} */
+
+th,
+td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* This css is for GroundAdmin  */
+
+.container {
+    overflow-y: auto;
+}
+
+.Groundform {
+    background: white;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="checkbox"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 16px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+input[type="checkbox"] {
+    width: auto;
+}
+
+.bluebutton {
+    background-color: #5C67F2;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 3px;
+
+}
+
+.bluebutton:hover {
+    background-color: #4a54e1;
+}
+
+.redbutton {
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 3px;
+
+}
+
+.redbutton:hover {
+    background-color: #cc2f2a;
+}
+
+
+.available {
+    background-color: green;
+    color: white;
+}
+
+.not-available {
+    background-color: red;
+    color: white;
+}
+
+#addNewGroundBtn {
+    margin-top: 20px;
+    display: block;
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+}
+
+#addNewGroundBtn:hover {
+    background-color: #218838;
+}
+
+#submit {
+    margin-top: 10px;
+}
+
+#cancel {
+    margin-top: 20px;
+}
+
+/* This css is for BookingAdmin*/
+
+#Bookingform {
+    display: inline;
+}
+
+select,
+button {
+    padding: 5px 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+}
+
+#submit {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#submit:hover {
+    background-color: #45a049;
+}
+
+.no-bookings {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* This css is for Taining */
+
+/* .Training {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+} */
+
+/* 
+form {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+form input[type="number"],
+form input[type="time"],
+form input[type="date"],
+form input[type="text"],
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+form input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #5cb85c;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+    background-color: #4cae4c;
+}
+
+form textarea {
+    height: 100px;
+    resize: none;
+} */
