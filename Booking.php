@@ -82,7 +82,7 @@ $result = mysqli_query($conn, $sql);
                     echo '<p>Lights: ' . ($row['lights'] ? 'Available' : 'Not Available') . '</p>';
                     echo '<p>Scoreboard: ' . ($row['scoreboard'] ? 'Available' : 'Not Available') . '</p>';
                     echo '</div>';
-                    echo '<a href="Booking_step/DateBooking.php?category=SchoolHolidayCamps&ground=' . urlencode($row['ground_name']) . '" class="select-button">BOOK</a>';
+                    echo '<a href="Booking_step/DateBooking.php?category=GroundBooking&ground=' . urlencode($row['ground_name']) . '" class="select-button">BOOK</a>';
                     echo '</div>';
                 }
                 ?>

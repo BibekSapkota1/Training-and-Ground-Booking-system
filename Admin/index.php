@@ -12,27 +12,30 @@
     <?php
     @include 'NavbarAdmin.php';
     ?>
-    <div class="main p-3">
-        <div class="text-center">
-            <div class="main-content">
-                <h1>Welcome to the Admin Page</h1>
-                <p>Use the sidebar to navigate through different sections.</p>
-                <p id="datetime"></p>
+
+    <div class="container">
+        <div class="main p-3">
+            <div class="text-center">
+                <div class="main-content">
+                    <h1>Welcome to the Admin Page</h1>
+                    <p>Use the sidebar to navigate through different sections.</p>
+                    <p id="datetime"></p>
+                </div>
+
+
+                <script>
+
+                    function updateDateTime() {
+                        const dateTimeElement = document.getElementById('datetime');
+                        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', timeZoneName: 'short' };
+                        const currentDateTime = new Date().toLocaleDateString('en-US', options);
+                        dateTimeElement.textContent = currentDateTime;
+                    }
+                    updateDateTime();
+
+                    setInterval(updateDateTime, 1000);
+                </script>
             </div>
-
-
-            <script>
-
-                function updateDateTime() {
-                    const dateTimeElement = document.getElementById('datetime');
-                    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', timeZoneName: 'short' };
-                    const currentDateTime = new Date().toLocaleDateString('en-US', options);
-                    dateTimeElement.textContent = currentDateTime;
-                }
-                updateDateTime();
-
-                setInterval(updateDateTime, 1000);
-            </script>
         </div>
     </div>
     </div>

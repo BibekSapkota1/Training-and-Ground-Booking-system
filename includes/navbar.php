@@ -162,12 +162,6 @@
             </div>
         </div>
     </nav>
-    <!-- Add this div below the navbar -->
-    <div class="blackbackground">
-        <div class="textsection">
-            Hi
-        </div>
-    </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {

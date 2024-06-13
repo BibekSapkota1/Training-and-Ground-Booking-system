@@ -11,7 +11,7 @@
 <body>
     <?php
     @include 'includes/navbar.php';
-
+    @include 'includes/modal.php';
     @include 'includes/slider.php';
     ?>
 

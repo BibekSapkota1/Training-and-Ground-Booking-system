@@ -471,7 +471,7 @@
                 </li>
             </ul>
             <div class="sidebar-footer">
-                <a href="#" class="sidebar-link" data-target="logout.php">
+                <a href="../userAuth/logout.php" class="sidebar-link" data-target="logout.php">
                     <i class="lni lni-exit"></i>
                     <span>Logout</span>
                 </a>
