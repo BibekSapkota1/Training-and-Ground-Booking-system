@@ -8,7 +8,6 @@ if (!isset($_SESSION['user_name'])) {
     exit;
 }
 
-
 // Check if the connection is established
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
@@ -18,11 +17,14 @@ if (!$conn) {
 $user_id = $_SESSION['user_name'];
 
 // Query to fetch recent bookings from the database for the logged-in user
-$sql = "SELECT * FROM bookings WHERE user_id = ? ORDER BY id DESC LIMIT 15";
+$sql = "SELECT * FROM booking WHERE userId = ? ORDER BY id DESC LIMIT 15";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param('i', $user_id);
 $stmt->execute();
 $result = $stmt->get_result();
+
+// Check if there are any bookings
+$has_bookings = mysqli_num_rows($result) > 0;
 
 ?>
 
@@ -33,9 +35,9 @@ $result = $stmt->get_result();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recent Bookings</title>
-    <link rel="stylesheet" href="Css/Booking_Details.css">
+    <link rel="stylesheet" href="Css/style.css">
     <style>
-        body {
+        /* body {
             font-family: 'Arial', sans-serif;
             background-color: #f4f4f4;
             color: #333;
@@ -45,11 +47,8 @@ $result = $stmt->get_result();
 
         .table-container {
             max-height: 400px;
-            /* Set the maximum height */
             overflow-y: auto;
-            /* Enable vertical scrolling if needed */
             margin-bottom: 20px;
-            /* Add some space below the table */
         }
 
         .container {
@@ -75,7 +74,6 @@ $result = $stmt->get_result();
             width: 100%;
             border-collapse: collapse;
             margin-bottom: 20px;
-
         }
 
         table,
@@ -145,17 +143,14 @@ $result = $stmt->get_result();
             h2 {
                 font-size: 20px;
             }
-        }
+        } */
     </style>
 </head>
 
 <body>
-    <?php
-    @include 'includes/Navbar.php';
-    ?>
+    <?php @include 'includes/Navbar.php'; ?>
     <div class="container">
         <div class="containe">
-
             <h2>Recent Bookings</h2>
             <div class="table-container">
                 <table>
@@ -171,16 +166,21 @@ $result = $stmt->get_result();
                     </thead>
                     <tbody>
                         <?php
-                        // Loop through each recent booking and display its information
-                        while ($row = mysqli_fetch_assoc($result)) {
-                            echo '<tr>';
-                            echo '<td>' . $row['id'] . '</td>';
-                            echo '<td>' . $row['category'] . '</td>';
-                            echo '<td>' . $row['booking_name'] . '</td>';
-                            echo '<td>' . $row['booking_date'] . '</td>';
-                            echo '<td>' . $row['ground'] . '</td>';
-                            echo '<td>' . $row['confirmation_status'] . '</td>';
-                            echo '</tr>';
+                        // If there are bookings, loop through and display them
+                        if ($has_bookings) {
+                            while ($row = mysqli_fetch_assoc($result)) {
+                                echo '<tr>';
+                                echo '<td>' . $row['ID'] . '</td>';
+                                echo '<td>' . $row['category'] . '</td>';
+                                echo '<td>' . $row['bookingName'] . '</td>';
+                                echo '<td>' . $row['bookingDate'] . '</td>';
+                                echo '<td>' . $row['groundName'] . '</td>';
+                                echo '<td>' . $row['confirmationStatus'] . '</td>';
+                                echo '</tr>';
+                            }
+                        } else {
+                            // If no bookings found, display a single row with a message
+                            echo '<tr><td colspan="6" style="text-align:center;">No bookings found.</td></tr>';
                         }
                         ?>
                     </tbody>
@@ -188,7 +188,6 @@ $result = $stmt->get_result();
             </div>
         </div>
     </div>
-
 </body>
 
 </html>

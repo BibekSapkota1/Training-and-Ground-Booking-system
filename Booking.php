@@ -13,7 +13,7 @@ if (!$conn) {
 }
 
 // Query to fetch ground details from the database
-$sql = "SELECT * FROM grounds";
+$sql = "SELECT * FROM ground";
 $result = mysqli_query($conn, $sql);
 
 ?>
@@ -25,7 +25,7 @@ $result = mysqli_query($conn, $sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Appointment Booking</title>
-    <link rel="stylesheet" href="css/Booking.css">
+    <!-- <link rel="stylesheet" href="css/Booking.css"> -->
     <script>
         function showGrounds(category) {
             const groundSelection = document.getElementById('groundSelection');

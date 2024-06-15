@@ -9,17 +9,16 @@ if (!isset($_SESSION['admin_name'])) {
     exit;
 }
 
-
 // Check if form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Check if booking ID and confirmation status are set
-    if (isset($_POST['booking_id']) && isset($_POST['confirmation_status'])) {
+    if (isset($_POST['booking_ID']) && isset($_POST['confirmationStatus'])) {
         // Sanitize inputs to prevent SQL injection
-        $booking_id = $_POST['booking_id'];
-        $confirmation_status = $_POST['confirmation_status'];
+        $booking_id = $_POST['booking_ID'];
+        $confirmation_status = $_POST['confirmationStatus'];
 
         // Prepare SQL statement to update confirmation status and confirmed_at timestamp
-        $sql = "UPDATE bookings SET confirmation_status = ?, confirmed_at = CURRENT_TIMESTAMP WHERE id = ?";
+        $sql = "UPDATE booking SET confirmationStatus = ?, confirmedAt = CURRENT_TIMESTAMP WHERE ID = ?";
         $stmt = $conn->prepare($sql);
 
         if ($stmt) {
@@ -31,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 exit;
             } else {
                 // Error in execution
-                echo "Error updating confirmation status: " . $conn->error;
+                echo "Error updating confirmation status: " . $stmt->error;
             }
         } else {
             // Error in preparing statement
@@ -44,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 // Fetch all booking records from the database
-$sql = "SELECT * FROM bookings";
+$sql = "SELECT * FROM booking";
 $result = $conn->query($sql);
 ?>
 
@@ -56,8 +55,6 @@ $result = $conn->query($sql);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin - Manage Bookings</title>
     <link rel="stylesheet" href="../Css/Adminstyle.css"> <!-- You need to create this CSS file -->
-       
-
 </head>
 
 <body>
@@ -85,27 +82,25 @@ $result = $conn->query($sql);
                     while ($row = $result->fetch_assoc()) {
                         ?>
                         <tr>
-                            <td><?= htmlspecialchars($row["id"]); ?></td>
-                            <td><?= htmlspecialchars($row["user_id"]); ?></td>
-                            <td><?= htmlspecialchars($row["booking_name"]); ?></td>
+                            <td><?= htmlspecialchars($row["ID"]); ?></td>
+                            <td><?= htmlspecialchars($row["userId"]); ?></td>
+                            <td><?= htmlspecialchars($row["bookingName"]); ?></td>
                             <td><?= htmlspecialchars($row["category"]); ?></td>
-                            <td><?= htmlspecialchars($row["ground"]); ?></td>
-                            <td><?= htmlspecialchars($row["booking_date"]); ?></td>
-                            <td><?= htmlspecialchars($row["booked_at"]); ?></td>
+                            <td><?= htmlspecialchars($row["groundName"]); ?></td>
+                            <td><?= htmlspecialchars($row["bookingDate"]); ?></td>
+                            <td><?= htmlspecialchars($row["bookedAt"]); ?></td>
                             <td>
-                                <form id="Bookingform" action="" method="POST">
-                                    <input type="hidden" name="booking_id" value="<?= $row["id"]; ?>">
-                                    <select  name="confirmation_status">
-                                        <option value="yet_to_confirm" <?= ($row["confirmation_status"] == "yet_to_confirm") ? "selected" : ""; ?>>Yet to Confirm</option>
-                                        <option value="confirmed" <?= ($row["confirmation_status"] == "confirmed") ? "selected" : ""; ?>>
-                                            Confirmed</option>
-                                        <option value="canceled" <?= ($row["confirmation_status"] == "canceled") ? "selected" : ""; ?>>
-                                            Canceled</option>
+                                <form id="Bookingform" action="<?= $_SERVER['PHP_SELF']; ?>" method="POST">
+                                    <input type="hidden" name="booking_ID" value="<?= $row["ID"]; ?>">
+                                    <select name="confirmationStatus">
+                                        <option value="yet_to_confirm" <?= ($row["confirmationStatus"] == "yet_to_confirm") ? "selected" : ""; ?>>Yet to Confirm</option>
+                                        <option value="confirmed" <?= ($row["confirmationStatus"] == "confirmed") ? "selected" : ""; ?>>Confirmed</option>
+                                        <option value="canceled" <?= ($row["confirmationStatus"] == "canceled") ? "selected" : ""; ?>>Canceled</option>
                                     </select>
                                     <button id="submit" type="submit">Update</button>
                                 </form>
                             </td>
-                            <td><?= htmlspecialchars($row["confirmed_at"]); ?></td>
+                            <td><?= htmlspecialchars($row["confirmedAt"]); ?></td>
                         </tr>
                         <?php
                     }

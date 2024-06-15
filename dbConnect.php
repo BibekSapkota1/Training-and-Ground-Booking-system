@@ -1,5 +1,5 @@
 <?php
-$conn = mysqli_connect('localhost', 'root', '', 'cricket_academy');
+$conn = mysqli_connect('localhost', 'root', '', 'bibek_sapkota_23189618');
 
 // Check connection
 if (!$conn) {
@@ -9,4 +9,3 @@ if (!$conn) {
 
 
 
-<?php

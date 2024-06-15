@@ -5,10 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Date Booking</title>
-    <link rel="stylesheet" href="../css/Booking.css">
+    <!-- <link rel="stylesheet" href="../css/Booking.css"> -->
+    <link rel="stylesheet" href="../css/style.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        .date-selection {
+        /* .date-selection {
             border: 1px solid #ccc;
             border-radius: 5px;
             padding: 20px;
@@ -48,12 +49,11 @@
         .error-message {
             color: red;
             margin-top: 10px;
-        }
+        } */
     </style>
 </head>
 
 <body>
-
 
     <div class="margins">
         <div class="container">

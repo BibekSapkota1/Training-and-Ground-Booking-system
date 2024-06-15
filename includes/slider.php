@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Full Screen Carousel</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/slider.css">
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
     <style>
-        html,
+        /* html,
         body {
             height: 100%;
             margin: 0;
@@ -23,7 +23,7 @@
 
         .carousel-item img {
             object-fit: cover;
-        }
+        } */
     </style>
 </head>
 
@@ -35,7 +35,7 @@
                     <img src="Pictures/Bat.jpeg" alt="3D rendering of an imaginary orange planet in space" />
                     <div class="slide-text">
                         <h1 class="top">Cricket is for</h1>
-                        <h2 class="middle">Everyone</h2>
+                        <h1 class="middle">Everyone</h1>
                         <p class="bottom">... Making cricket accessible for all at Nepal Cricket Academy.</p>
                     </div>
                 </div>
@@ -43,7 +43,7 @@
                     <img src="Pictures/Bat.jpeg" alt="3D rendering of an imaginary green planet in space" />
                     <div class="slide-text">
                         <h1 class="top">We Offer High</h1>
-                        <h2 class="middle">QUALITY</h2>
+                        <h1 class="middle">QUALITY</h1>
                         <p class="bottom">... but maintaining affordable pricing to ensure that high-quality coaching is
                             accessible to all.</p>
                     </div>
@@ -52,7 +52,7 @@
                     <img src="pictures/2.jpeg" alt="3D rendering of an imaginary blue planet in space" />
                     <div class="slide-text">
                         <h1 class="top">We can help </h1>
-                        <h2 class="middle">players</h2>
+                        <h1 class="middle">players</h1>
                         <p class="bottom">... achieve their full potential and excel in every aspect of the game.</p>
                     </div>
                 </div>

@@ -1,38 +1,44 @@
 <?php
-
 @include '../dbConnect.php';
 
 session_start();
 
 if (isset($_POST['submit'])) {
-
     $email = mysqli_real_escape_string($conn, $_POST['email']);
-    $pass = ($_POST['password']);
+    $password = $_POST['password'];
 
-    $select = " SELECT * FROM user WHERE email = '$email' && password = '$pass' ";
+    // Select user with the provided email
+    $select = "SELECT * FROM users WHERE email = ?";
+    $stmt = $conn->prepare($select);
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-    $result = mysqli_query($conn, $select);
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
 
-    if (mysqli_num_rows($result) > 0) {
-
-        $row = mysqli_fetch_array($result);
-
-        if ($row['user_type'] == 'admin') {
-            $_SESSION['admin_name'] = $row['id'];
-            $_SESSION['user_type'] = 'admin'; // Setting user type
-            header('location:../Admin/indexAdmin.php');
-
-        } elseif ($row['user_type'] == 'user') {
-            $_SESSION['user_name'] = $row['id'];
-            $_SESSION['user_type'] = 'user'; // Setting user type
-            header('location:../index.php');
+        // Verify the entered password with the hashed password from the database
+        if (password_verify($password, $row['password'])) {
+            // Password is correct
+            if ($row['userType'] == 'admin') {
+                $_SESSION['admin_name'] = $row['ID'];
+                $_SESSION['userType'] = 'admin'; // Setting user type
+                header('location: ../Admin/indexAdmin.php');
+                exit;
+            } elseif ($row['userType'] == 'user') {
+                $_SESSION['user_name'] = $row['ID'];
+                $_SESSION['userType'] = 'user'; // Setting user type
+                header('location: ../index.php');
+                exit;
+            }
+        } else {
+            // Password is incorrect
+            $error[] = 'Incorrect email or password!';
         }
-
-
     } else {
+        // No user found with the provided email
         $error[] = 'Incorrect email or password!';
     }
-
 }
 
 ?>
@@ -46,20 +52,16 @@ if (isset($_POST['submit'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Form</title>
     <link rel="stylesheet" href="../Css/login.css">
-
-
 </head>
 
 <body>
-
     <div class="form-container">
-
         <form action="" method="post">
             <h3>Login Now</h3>
             <?php
             if (isset($error)) {
-                foreach ($error as $error) {
-                    echo '<span class="error-msg">' . $error . '</span>';
+                foreach ($error as $errorMsg) {
+                    echo '<span class="error-msg">' . $errorMsg . '</span>';
                 }
             }
             ?>
@@ -68,10 +70,7 @@ if (isset($_POST['submit'])) {
             <input type="submit" name="submit" value="Login Now" class="form-btn">
             <p>Don't have an account? <a href="register.php">Register Now</a></p>
         </form>
-
     </div>
-
-
 </body>
 
 </html>

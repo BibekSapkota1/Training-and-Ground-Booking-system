@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $booking_date = htmlspecialchars($_POST['booking_date_select']);
 
     // Cheking if already booked or not
-    $sql = "SELECT * FROM bookings WHERE category = ? AND ground = ? AND booking_date = ?";
+    $sql = "SELECT * FROM booking WHERE category = ? AND groundName = ? AND bookingDate = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("sss", $category, $ground, $booking_date);
     $stmt->execute();

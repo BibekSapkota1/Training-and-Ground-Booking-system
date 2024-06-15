@@ -19,7 +19,6 @@ if (!isset($_SESSION['admin_name'])) {
     <title>User Table</title>
     <!-- Include Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <!-- <link rel="stylesheet" href="../css/userAdmin.css"> -->
 </head>
 
 <body>
@@ -34,7 +33,7 @@ if (!isset($_SESSION['admin_name'])) {
             <?php
 
 
-            $sql = "SELECT id, name, address, email, phone_number, date_of_birth, sex, password, user_type, user_made_date FROM user WHERE user_type = 'user'";
+            $sql = "SELECT ID, name, address, email, phoneNumber, dateOfBirth, sex, password, userType, createdAt FROM users WHERE userType = 'user'";
             $result = $conn->query($sql);
             ?>
 
@@ -58,17 +57,17 @@ if (!isset($_SESSION['admin_name'])) {
                         while ($row = $result->fetch_assoc()) {
                             ?>
                             <tr>
-                                <td><?= htmlspecialchars($row["id"]); ?></td>
+                                <td><?= htmlspecialchars($row["ID"]); ?></td>
                                 <td><?= htmlspecialchars($row["name"]); ?></td>
                                 <td><?= htmlspecialchars($row["address"]); ?></td>
                                 <td><?= htmlspecialchars($row["email"]); ?></td>
-                                <td><?= htmlspecialchars($row["phone_number"]); ?></td>
-                                <td><?= htmlspecialchars($row["date_of_birth"]); ?></td>
+                                <td><?= htmlspecialchars($row["phoneNumber"]); ?></td>
+                                <td><?= htmlspecialchars($row["dateOfBirth"]); ?></td>
                                 <td><?= htmlspecialchars($row["sex"]); ?></td>
-                                <td><?= htmlspecialchars($row["user_type"]); ?></td>
+                                <td><?= htmlspecialchars($row["userType"]); ?></td>
                                 <td>
                                     <?php
-                                    $createdAt = $row["user_made_date"];
+                                    $createdAt = $row["createdAt"];
                                     $timestamp = strtotime($createdAt);
                                     if ($timestamp === false) {
                                         echo "Invalid date";

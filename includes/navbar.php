@@ -1,9 +1,9 @@
 <?php session_start();
 
-// if (isset($_SESSION['admin_name'])) {
-//     header('Location:../admin_page.php');
-//     exit; // Stop executing the rest of the code
-// }
+if (isset($_SESSION['admin_name'])) {
+    header('Location:../admin_page.php');
+    exit;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,104 +18,14 @@
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- CSS -->
-    <link href="Css/navbarUser.css" rel="stylesheet">
-    <!-- <style>
-        body,
-        .navbar,
-        .nav-link {
-            font-family: 'Poppins', sans-serif;
-        }
-
-
-
-        body {
-            padding-top: 0px;
-        }
-
-        .navbar {
-            padding-top: 0.5rem;
-            padding-bottom: 0.5rem;
-            background-color: rgba(255, 255, 255, 0.8) !important;
-            backdrop-filter: blur(10px);
-        }
-
-        .nav-link {
-            position: relative;
-            color: rgba(0, 0, 0, 0.7) !important;
-            transition: color 0.2s ease-in-out;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 5px;
-            width: 100%;
-            height: 3px;
-            background-color: green;
-            transform: scaleX(0);
-            transition: transform 0.2s ease-in-out;
-            transform-origin: bottom right;
-        }
-
-        .nav-link:hover::after {
-            transform: scaleX(1);
-            transform-origin: bottom left;
-        }
-
-        .nav-link:hover {
-            color: rgba(0, 0, 0, 0.7) !important;
-            background-color: transparent !important;
-        }
-
-        .navbar-brand:hover {
-            background-color: transparent !important;
-        }
-
-        .navbar-toggler {
-            border: none;
-        }
-
-        .navbar-toggler:hover {
-            background-color: transparent !important;
-        }
-
-        .nav-item {
-            margin-right: 10px;
-        }
-
-        .navbar-brand img {
-            max-width: 125px;
-            height: auto;
-        }
-    </style> -->
+    <link href="Css/style.css" rel="stylesheet">
 </head>
 
 <body>
-
-    <?php
-
-    // //   Check if a specific session variable is set
-    // if (isset($_SESSION['admin_name'])) {
-    //     // Admin session is active
-    //     echo "Admin session is active";
-    // } elseif (isset($_SESSION['user_name'])) {
-    //     //   User session is active
-    //     echo "User session is active";
-    // } else {
-    //     //  No session is active
-    //     echo "No session is active";
-    // }
-    ?>
-
-
-
-
-
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.php">
-                <img src="" alt="logo">
+                <img src="" id="logo" alt="logo">
             </a>
             <button class="navbar-toggler" type="button" aria-controls="navbarExample" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -182,6 +92,3 @@
             });
         });
     </script>
-</body>
-
-</html>

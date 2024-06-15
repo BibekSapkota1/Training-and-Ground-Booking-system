@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['delete_ground_id'])) {
         // Handle delete operation
         $ground_id = $_POST['delete_ground_id'];
-        $sql = "DELETE FROM grounds WHERE id='$ground_id'";
+        $sql = "DELETE FROM ground WHERE id='$ground_id'";
         if ($conn->query($sql) === TRUE) {
             // Redirect to the same page after successful deletion
             header("Location: {$_SERVER['PHP_SELF']}");
@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Prepare SQL statement based on whether it's an update or insertion
         if ($ground_id) {
             // Update existing record
-            $sql = "UPDATE grounds SET 
+            $sql = "UPDATE ground SET 
                 ground_name='$ground_name', 
                 price='$price', 
                 times='$times', 
@@ -51,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 WHERE id='$ground_id'";
         } else {
             // Insert new record
-            $sql = "INSERT INTO grounds (ground_name, price, times, width, length, lights, scoreboard) 
+            $sql = "INSERT INTO ground (ground_name, price, times, width, length, lights, scoreboard) 
 VALUES ('$ground_name', '$price', '$times', '$width', '$length', '$lights', '$scoreboard')";
 
         }
@@ -101,7 +101,7 @@ VALUES ('$ground_name', '$price', '$times', '$width', '$length', '$lights', '$sc
                 </tr>
                 <?php
                 // Load all records
-                $sql = "SELECT * FROM grounds";
+                $sql = "SELECT * FROM ground";
                 $result = $conn->query($sql);
                 if ($result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {

@@ -17,7 +17,7 @@ if (isset($_POST['submit'])) {
    $cpass = mysqli_real_escape_string($conn, $_POST['cpassword']);
 
    // Check if the user already exists
-   $select = "SELECT * FROM user WHERE email = ?";
+   $select = "SELECT * FROM users WHERE email = ?";
    $stmt = $conn->prepare($select);
    $stmt->bind_param("s", $email);
    $stmt->execute();
@@ -33,9 +33,9 @@ if (isset($_POST['submit'])) {
          $hashed_pass = password_hash($pass, PASSWORD_BCRYPT);
 
          // Insert new user into the database
-         $insert = "INSERT INTO user (name, email, address, phone_number, date_of_birth, sex, password) VALUES (?, ?, ?, ?, ?, ?, ?)";
+         $insert = "INSERT INTO users (name, email, address, phoneNumber, dateOfBirth, sex, password) VALUES (?, ?, ?, ?, ?, ?, ?)";
          $stmt = $conn->prepare($insert);
-         $stmt->bind_param("sssssss", $name, $email, $address, $phone, $dob, $sex, $pass);
+         $stmt->bind_param("sssssss", $name, $email, $address, $phone, $dob, $sex, $hashed_pass);
          // $stmt->bind_param("sssssss", $name, $email, $address, $phone, $dob, $sex, $hashed_pass);
          $stmt->execute();
 

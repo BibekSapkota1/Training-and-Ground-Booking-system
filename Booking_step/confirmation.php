@@ -33,13 +33,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Check if all required data is available
         if ($booking_name && $category && $ground && $booking_date) {
             // Prepare and bind
-            $stmt = $conn->prepare("INSERT INTO bookings (booking_name, category, ground, booking_date, user_id) VALUES (?, ?, ?, ?, ?)");
+            $stmt = $conn->prepare("INSERT INTO booking (bookingName, category, groundName, bookingDate, userId) VALUES (?, ?, ?, ?, ?)");
             if ($stmt) {
                 $stmt->bind_param("ssssi", $booking_name, $category, $ground, $booking_date, $user_id);
                 $stmt->execute();
                 $stmt->close();
                 // Redirect to recent bookings page with a success message
-                echo '<script>alert("Booking confirmed successfully!"); window.location.href = "../Booking_Details.php";</script>';
+                echo '<script>alert("Booking confirmed successfully!"); window.location.href = "../bookingDetails.php";</script>';
                 exit; // Terminate script execution after redirection
             } else {
                 echo "Error: " . $conn->error;
@@ -68,7 +68,7 @@ $conn->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Confirmation</title>
-    <link rel="stylesheet" href="../css/Booking.css">
+    <link rel="stylesheet" href="../css/style.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
 </head>

@@ -14,7 +14,7 @@ if (!isset($_SESSION['user_name'])) {
     <meta charset="UTF-8">
     <title>Available Training Sessions</title>
     <style>
-        body {
+        /* body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f9;
             padding: 20px;
@@ -31,11 +31,11 @@ if (!isset($_SESSION['user_name'])) {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
+            margin-top: 100px;
         }
 
         .training-card {
             width: calc(33.33% - 20px);
-            /* Three cards in a row */
             margin: 10px;
             background: #ffffff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -79,14 +79,12 @@ if (!isset($_SESSION['user_name'])) {
         @media screen and (max-width: 768px) {
             .training-card {
                 width: calc(50% - 20px);
-                /* Two cards in a row on smaller screens */
             }
         }
 
         @media screen and (max-width: 480px) {
             .training-card {
                 width: 100%;
-                /* One card in a row on extra small screens */
             }
         }
 
@@ -94,7 +92,7 @@ if (!isset($_SESSION['user_name'])) {
             text-align: center;
             font-size: 18px;
             margin-top: 20px;
-        }
+        } */
     </style>
 </head>
 
@@ -180,25 +178,6 @@ if (!isset($_SESSION['user_name'])) {
         }
         ?>
 
-        <?php
-        //Start the session
-        // Check if the user is logged in
-        if (isset($_SESSION['user_name'])) {
-            // User is logged in, retrieve user_id from session
-            $user_id = $_SESSION['user_name'];
-            echo "User ID: $user_id";
-
-        } elseif (isset($_SESSION['admin_name'])) {
-            // User is logged in, retrieve user_id from session
-            $user_id = $_SESSION['admin_name'];
-            echo "User ID: $user_id";
-
-
-        } else {
-            // User is not logged in
-            echo "User is not logged in.";
-        }
-        ?>
     </div>
 
 </body>
