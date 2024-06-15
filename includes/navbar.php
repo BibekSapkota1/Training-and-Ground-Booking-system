@@ -25,7 +25,7 @@ if (isset($_SESSION['admin_name'])) {
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.php">
-                <img src="" id="logo" alt="logo">
+                <img src="Pictures/logo.svg" id="logo" alt="logo">
             </a>
             <button class="navbar-toggler" type="button" aria-controls="navbarExample" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -54,9 +54,6 @@ if (isset($_SESSION['admin_name'])) {
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="profile.php" style="color: black;">Profile</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="change-password.php" style="color: black;">Change
-                                    Password</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="userAuth/logout.php" style="color: black;">Logout</a>
                             </div>

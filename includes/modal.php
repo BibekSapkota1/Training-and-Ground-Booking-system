@@ -62,8 +62,8 @@ $isLoggedIn = isset($_SESSION['user_name']);
 
                 <!-- Modal body -->
                 <div class="modal-body text-justify">
-                    <p>Welcome !! <br>
-                        To unlock additional features and services including Booking and Registration,
+                    <p class="text-center text-dark">Welcome !! </p>
+                    <p> To unlock additional features and services including Booking and Registration,
                         please log in to your account. Logging in ensures you have full access to all the
                         functionalities we offer, providing you with a seamless and personalized experience.</p>
                 </div>

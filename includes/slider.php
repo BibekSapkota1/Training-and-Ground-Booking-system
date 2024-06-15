@@ -40,7 +40,7 @@
                     </div>
                 </div>
                 <div class="slide">
-                    <img src="Pictures/Bat.jpeg" alt="3D rendering of an imaginary green planet in space" />
+                    <img src="Pictures/out.jpeg" alt="3D rendering of an imaginary green planet in space" />
                     <div class="slide-text">
                         <h1 class="top">We Offer High</h1>
                         <h1 class="middle">QUALITY</h1>
