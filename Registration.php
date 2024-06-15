@@ -2,7 +2,7 @@
 session_start();
 
 if (!isset($_SESSION['user_name'])) {
-    header("Location: userAuth/login.php");
+    header('location:pageNotFound.php');
     exit;
 }
 ?>
@@ -112,7 +112,7 @@ if (!isset($_SESSION['user_name'])) {
         }
 
         // Fetch data
-        $sql = "SELECT id, training_duration, training_time, starting_date, description FROM training_sessions";
+        $sql = "SELECT ID, trainingDurations, tranningTime, startingDate, description FROM training";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
@@ -121,14 +121,14 @@ if (!isset($_SESSION['user_name'])) {
                 ?>
                 <div class="training-card">
                     <div class="training-card-header">
-                        <h3 class="training-card-title"><?php echo $row["training_duration"]; ?></h3>
+                        <h3 class="training-card-title"><?php echo $row["trainingDurations"]; ?></h3>
                     </div>
                     <div class="training-card-body">
-                        <p>Training Time: <?php echo $row["training_time"]; ?></p>
-                        <p>Starting Date: <?php echo $row["starting_date"]; ?></p>
+                        <p>Training Time: <?php echo $row["tranningTime"]; ?></p>
+                        <p>Starting Date: <?php echo $row["startingDate"]; ?></p>
                         <p class="training-card-description" style="text-align: justify;"><?php echo $row["description"]; ?></p>
                         <form method="post" action="">
-                            <input type="hidden" name="training_id" value="<?php echo $row['id']; ?>">
+                            <input type="hidden" name="training_id" value="<?php echo $row['ID']; ?>">
                             <button class="training-card-enroll" type="submit" name="enroll">Enroll</button>
                         </form>
                     </div>
@@ -151,7 +151,7 @@ if (!isset($_SESSION['user_name'])) {
             $training_id = $_POST['training_id'];
             $user_id = $_SESSION['user_name'];
 
-            $check_sql = "SELECT * FROM registration WHERE user_id = ?";
+            $check_sql = "SELECT * FROM registration WHERE userId = ?";
             $stmt = $conn->prepare($check_sql);
             $stmt->bind_param("i", $user_id);
             $stmt->execute();
@@ -161,7 +161,7 @@ if (!isset($_SESSION['user_name'])) {
                 echo 'You are already enrolled in a training session.';
             } else {
                 // Enroll the user
-                $insert_sql = "INSERT INTO registration (user_id, training_id) VALUES (?, ?)";
+                $insert_sql = "INSERT INTO registration (userId, tranningId) VALUES (?, ?)";
                 $stmt = $conn->prepare($insert_sql);
                 $stmt->bind_param("ii", $user_id, $training_id);
 

@@ -129,13 +129,13 @@
 
                     <?php if (isset($_SESSION['user_name'])): ?>
                         <li class="nav-item">
-                            <a class="nav-link" href="Booking.php" style="color: black;">Booking</a>
+                            <a class="nav-link" href="booking.php" style="color: black;">Booking</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="Booking_Details.php" style="color: black;">Booking Details</a>
+                            <a class="nav-link" href="bookingDetails.php" style="color: black;">Booking Details</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="Registration.php" style="color: black;">Registration</a>
+                            <a class="nav-link" href="registration.php" style="color: black;">Registration</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"

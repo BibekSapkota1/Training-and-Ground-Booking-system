@@ -1,3 +1,15 @@
+<?php
+@include '../dbConnect.php';
+
+session_start();
+
+if (!isset($_SESSION['admin_name'])) {
+    header('location:../pageNotFound.php');
+    exit;
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,7 +32,7 @@
         <h1 class="header-title  mt-3">List of Users</h1>
         <div class="container-slide">
             <?php
-            @include '../dbConnect.php';
+
 
             $sql = "SELECT id, name, address, email, phone_number, date_of_birth, sex, password, user_type, user_made_date FROM user WHERE user_type = 'user'";
             $result = $conn->query($sql);

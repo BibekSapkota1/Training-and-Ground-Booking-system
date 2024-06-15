@@ -2,6 +2,14 @@
 // Include database connection file
 include '../dbConnect.php';
 
+session_start();
+
+if (!isset($_SESSION['admin_name'])) {
+    header('location:../pageNotFound.php');
+    exit;
+}
+
+
 // Check if form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Check if booking ID and confirmation status are set
@@ -47,62 +55,8 @@ $result = $conn->query($sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin - Manage Bookings</title>
-    <link rel="stylesheet" href="../cs/user_admin.css"> <!-- You need to create this CSS file -->
-    <style>
-        /* body {
-            font-family: Arial, sans-serif;
-        }
-
-        h1 {
-            text-align: center;
-        } */
-
-        /* table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-
-        table th,
-        table td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        } */
-
-        /* table th {
-            background-color: #f2f2f2;
-        }
-
-        form {
-            display: inline;
-        } */
-
-        /* select,
-        button {
-            padding: 5px 10px;
-            font-size: 14px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            background-color: #fff;
-        }
-
-        button {
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #45a049;
-        }
-
-        .no-bookings {
-            text-align: center;
-            margin-top: 20px;
-        } */
-    </style>
+    <link rel="stylesheet" href="../Css/Adminstyle.css"> <!-- You need to create this CSS file -->
+       
 
 </head>
 

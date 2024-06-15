@@ -20,7 +20,7 @@ if (isset($_POST['submit'])) {
         if ($row['user_type'] == 'admin') {
             $_SESSION['admin_name'] = $row['id'];
             $_SESSION['user_type'] = 'admin'; // Setting user type
-            header('location:../Admin/NavbarAdmin.php');
+            header('location:../Admin/indexAdmin.php');
 
         } elseif ($row['user_type'] == 'user') {
             $_SESSION['user_name'] = $row['id'];

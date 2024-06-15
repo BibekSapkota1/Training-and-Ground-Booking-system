@@ -2,14 +2,14 @@
 // Include the database connection file
 @include '../dbConnect.php';
 
-// Start the session
+
 session_start();
 
-//Check if the admin is logged in, if not, redirect to the login page
 if (!isset($_SESSION['admin_name'])) {
-    header('location:../login.php');
-    exit; // Ensure no further code execution after redirection
+    header('location:../pageNotFound.php');
+    exit;
 }
+
 
 // Check if the form has been submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

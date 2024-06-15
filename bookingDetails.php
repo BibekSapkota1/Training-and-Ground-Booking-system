@@ -1,16 +1,13 @@
 <?php
-// Start the session
+include 'dbConnect.php';
+
 session_start();
 
-// Check if user is not logged in
 if (!isset($_SESSION['user_name'])) {
-    // Redirect to login page or display a message
-    header("Location: login.php");
-    exit; // Stop executing the rest of the code
+    header('location:pageNotFound.php');
+    exit;
 }
 
-// Include the database connection file
-include 'dbConnect.php';
 
 // Check if the connection is established
 if (!$conn) {
