@@ -84,8 +84,6 @@ if (!isset($_SESSION['user_name'])) {
         $stmt->close();
         $conn->close();
 
-        // header("Location: " . $_SERVER['PHP_SELF']);
-        // exit();
     }
     ?>
 
