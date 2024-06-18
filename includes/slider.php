@@ -32,7 +32,7 @@
         <div class="slider-wrapper">
             <div class="slider">
                 <div class="slide">
-                    <img src="Pictures/Bat.jpeg" alt="3D rendering of an imaginary orange planet in space" />
+                    <img src="images/Bat.jpeg" alt="3D rendering of an imaginary orange planet in space" />
                     <div class="slide-text">
                         <h1 class="top">Cricket is for</h1>
                         <h1 class="middle">Everyone</h1>
@@ -40,7 +40,7 @@
                     </div>
                 </div>
                 <div class="slide">
-                    <img src="Pictures/out.jpeg" alt="3D rendering of an imaginary green planet in space" />
+                    <img src="images/out.jpeg" alt="3D rendering of an imaginary green planet in space" />
                     <div class="slide-text">
                         <h1 class="top">We Offer High</h1>
                         <h1 class="middle">QUALITY</h1>
@@ -49,7 +49,7 @@
                     </div>
                 </div>
                 <div class="slide">
-                    <img src="pictures/2.jpeg" alt="3D rendering of an imaginary blue planet in space" />
+                    <img src="images/2.jpeg" alt="3D rendering of an imaginary blue planet in space" />
                     <div class="slide-text">
                         <h1 class="top">We can help </h1>
                         <h1 class="middle">players</h1>

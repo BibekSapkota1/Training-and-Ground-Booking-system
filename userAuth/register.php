@@ -76,7 +76,7 @@ if (isset($_POST['submit'])) {
 <body>
 
 
-   <div class="wrapper" style="background-image: url('../pictures/bg-registration-form-2.jpg');">
+   <div class="wrapper" style="background-image: url('../images/bg-registration-form-2.jpg');">
 
       <div class="container">
          <div class="where">

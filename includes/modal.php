@@ -5,7 +5,6 @@ $isLoggedIn = isset($_SESSION['user_name']);
 ?>
 
 <style>
-    /* CSS for semi-transparent overlay */
     .modal-overlay {
         position: fixed;
         top: 0;
@@ -17,15 +16,12 @@ $isLoggedIn = isset($_SESSION['user_name']);
         display: none;
     }
 
-    /* Centering the modal vertically and horizontally */
     .modal {
         display: flex;
         align-items: center;
         justify-content: center;
         height: 100%;
     }
-
-    /* Additional styling for the modal content */
     .modal-content {
         padding: 20px;
         border-radius: 10px;

@@ -41,66 +41,52 @@ $conn->close();
 @include 'includes/navbar.php';
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Profile</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-</head>
-
-<body>
-    <div class="container ">
-        <h1 class="text-center mb-4 mt-5">User Profile</h1>
-        <div class="row">
-            <div class="col-md-8 offset-md-2">
-                <form>
-                    <div class="form-group">
-                        <label for="userID">User ID</label>
-                        <input type="text" class="form-control" id="userID" value="<?php echo $user['ID']; ?>" readonly>
-                    </div>
-                    <div class="form-group">
-                        <label for="userName">Name</label>
-                        <input type="text" class="form-control" id="userName" value="<?php echo $user['name']; ?>"
-                            readonly>
-                    </div>
-                    <div class="form-group">
-                        <label for="userEmail">Email</label>
-                        <input type="email" class="form-control" id="userEmail" value="<?php echo $user['email']; ?>"
-                            readonly>
-                    </div>
-                    <div class="form-group">
-                        <label for="userAddress">Address</label>
-                        <input type="text" class="form-control" id="userAddress" value="<?php echo $user['address']; ?>"
-                            readonly>
-                    </div>
-                    <div class="form-group">
-                        <label for="userPhone">Phone Number</label>
-                        <input type="tel" class="form-control" id="userPhone"
-                            value="<?php echo $user['phoneNumber']; ?>" readonly>
-                    </div>
-                    <div class="form-group">
-                        <label for="userDOB">Date of Birth</label>
-                        <input type="text" class="form-control" id="userDOB" value="<?php echo $user['dateOfBirth']; ?>"
-                            readonly>
-                    </div>
-                    <div class="form-group">
-                        <label for="userSex">Sex</label>
-                        <input type="text" class="form-control" id="userSex" value="<?php echo $user['sex']; ?>"
-                            readonly>
-                    </div>
-                    <div class="form-group">
-                        <label for="createdat">Created At</label>
-                        <input type="text" class="form-control" id="userSex" value="<?php echo $user['createdAt']; ?>"
-                            readonly>
-                    </div>
-                </form>
-            </div>
+<div class="container" id="user-profile">
+    <h1 class="text-center mb-4">User Profile</h1>
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <form>
+                <div class="form-group">
+                    <label for="userID">User ID</label>
+                    <input type="text" class="form-control" id="userID" value="<?php echo $user['ID']; ?>" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="userName">Name</label>
+                    <input type="text" class="form-control" id="userName" value="<?php echo $user['name']; ?>" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="userEmail">Email</label>
+                    <input type="email" class="form-control" id="userEmail" value="<?php echo $user['email']; ?>"
+                        readonly>
+                </div>
+                <div class="form-group">
+                    <label for="userAddress">Address</label>
+                    <input type="text" class="form-control" id="userAddress" value="<?php echo $user['address']; ?>"
+                        readonly>
+                </div>
+                <div class="form-group">
+                    <label for="userPhone">Phone Number</label>
+                    <input type="tel" class="form-control" id="userPhone" value="<?php echo $user['phoneNumber']; ?>"
+                        readonly>
+                </div>
+                <div class="form-group">
+                    <label for="userDOB">Date of Birth</label>
+                    <input type="text" class="form-control" id="userDOB" value="<?php echo $user['dateOfBirth']; ?>"
+                        readonly>
+                </div>
+                <div class="form-group">
+                    <label for="userSex">Sex</label>
+                    <input type="text" class="form-control" id="userSex" value="<?php echo $user['sex']; ?>" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="createdat">Created At</label>
+                    <input type="text" class="form-control" id="userSex" value="<?php echo $user['createdAt']; ?>"
+                        readonly>
+                </div>
+            </form>
         </div>
     </div>
+</div>
 
 </body>
 

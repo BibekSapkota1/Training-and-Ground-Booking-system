@@ -180,6 +180,47 @@ body,
     }
 }
 
+
+/* index page  */
+
+.background-green {
+    background-color: #4CAF50;
+
+    /* Green background */
+    color: #fff;
+    /* White text */
+    padding: 30px;
+
+}
+
+.background-green h1 {
+    font-size: 2.5rem;
+    /* Larger font size for heading */
+    margin-bottom: 20px;
+    /* Spacing below heading */
+}
+
+.background-green p {
+    font-size: 1.1rem;
+    /* Font size for paragraphs */
+    line-height: 1.6;
+    /* Line height for better readability */
+}
+
+.color-green {
+    color: White;
+    /* Green text color */
+}
+
+.top-center {
+    display: block;
+    margin: 0 auto;
+    max-width: 30%;
+    height: auto;
+    /* Ensures the image maintains its aspect ratio */
+}
+
+
 /* Booking css */
 
 
@@ -572,4 +613,8 @@ tr td:first-child {
     text-align: center;
     font-size: 18px;
     margin-top: 20px;
+}
+
+#user-profile {
+    margin-top: 100px;
 }

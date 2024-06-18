@@ -1,7 +1,7 @@
 <?php session_start();
 
 if (isset($_SESSION['admin_name'])) {
-    header('Location:../admin_page.php');
+    header('Location:Admin/indexAdmin.php');
     exit;
 }
 ?>
@@ -18,14 +18,14 @@ if (isset($_SESSION['admin_name'])) {
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- CSS -->
-    <link href="Css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.php">
-                <img src="Pictures/logo.svg" id="logo" alt="logo">
+                <img src="images/logo.svg" id="logo" alt="logo">
             </a>
             <button class="navbar-toggler" type="button" aria-controls="navbarExample" aria-expanded="false"
                 aria-label="Toggle navigation">

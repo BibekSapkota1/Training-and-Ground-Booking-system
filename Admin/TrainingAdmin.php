@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['delete_training_id'])) {
         // Handle delete operation
         $training_id = $_POST['delete_training_id'];
-        $sql = "DELETE FROM training_sessions WHERE ID='$training_id'";
+        $sql = "DELETE FROM training WHERE ID='$training_id'";
         if ($conn->query($sql) === TRUE) {
             // Redirect to the same page after successful deletion
             header("Location: {$_SERVER['PHP_SELF']}");
