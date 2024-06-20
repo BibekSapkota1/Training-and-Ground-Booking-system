@@ -195,21 +195,16 @@ body,
 
 .background-green h1 {
     font-size: 2.5rem;
-    /* Larger font size for heading */
     margin-bottom: 20px;
-    /* Spacing below heading */
 }
 
 .background-green p {
     font-size: 1.1rem;
-    /* Font size for paragraphs */
     line-height: 1.6;
-    /* Line height for better readability */
 }
 
 .color-green {
     color: White;
-    /* Green text color */
 }
 
 .top-center {
@@ -217,7 +212,6 @@ body,
     margin: 0 auto;
     max-width: 30%;
     height: auto;
-    /* Ensures the image maintains its aspect ratio */
 }
 
 
@@ -363,9 +357,6 @@ button {
     transition: background-color 0.3s;
 }
 
-/* button:hover {
-    background-color: #0056b3;
-} */
 
 .error-message {
     color: red;
@@ -373,71 +364,6 @@ button {
 }
 
 /* Booking Details css */
-
-/* body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    margin: 0;
-    padding: 0;
-} */
-/* 
-.containe {
-    max-width: 1000px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-}
-
-h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #4CAF50;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-}
-
-table,
-th,
-td {
-    border: 1px solid #ddd;
-}
-
-th,
-td {
-    padding: 12px;
-    text-align: left;
-}
-
-th {
-    background-color: #4CAF50;
-    color: white;
-}
-
-tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-tr:hover {
-    background-color: #e9e9e9;
-}
-
-tr td:first-child {
-    text-align: center;
-} */
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    margin: 0;
-    padding: 0;
-}
 
 .table-container {
     max-height: 400px;

@@ -7,7 +7,7 @@
     <div class="container">
         <div class="text-center ">
             <img src="images/logo.svg" alt="Top Image" class="top-center">
-            <h1 class="color-green">CLUB CRICKET ACADEMY</h1>
+            <h1 class="color-green">CRICKET ASSOCIATION</h1>
             <p>SUPPORTS YOUR CLUB</p>
             <p>Local clubs are the grass roots of cricket, setting many on their way to a long innings in the game!
                 We
